@@ -1,5 +1,10 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import {
+	getAuth,
+	createUserWithEmailAndPassword,
+	signOut,
+	signInWithEmailAndPassword,
+} from 'firebase/auth';
 import {
 	getFirestore,
 	collection,
@@ -20,7 +25,7 @@ const firebaseConfig = {
 	measurementId: 'G-BH5JX4E57N',
 };
 
-/** initialize Firebase */
+/** initialize firebase */
 const app = initializeApp(firebaseConfig);
 
 /** initialize firebase services */
@@ -31,6 +36,8 @@ const db = getFirestore(app);
 export {
 	auth,
 	createUserWithEmailAndPassword,
+	signOut,
+	signInWithEmailAndPassword,
 	db,
 	collection,
 	onSnapshot,
