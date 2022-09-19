@@ -1,10 +1,22 @@
-import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/home/home';
+import Navbar from './components/navbar';
+import Signin from './pages/signin/sign-in';
+import Signup from './pages/signup/sign-up';
 
 const App = () => {
 	return (
-		<h1 className="p-8 text-center text-4xl font-bold text-indigo-800">
-			Your settings are well configured
-		</h1>
+		<div className="app">
+			<BrowserRouter>
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route index element={<Home />} />
+					<Route path="/signin" element={<Signin />} />
+					<Route path="/signup" element={<Signup />} />
+				</Routes>
+			</BrowserRouter>
+		</div>
 	);
 };
 
