@@ -13,7 +13,7 @@ const BookList = () => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<label>
-				<span>Add a New Book Title:</span>
+				<span className="font-semibold uppercase">Add New Book Title</span>
 				<input
 					type="text"
 					onChange={(e) => setNewBook(e.target.value)}
@@ -22,7 +22,7 @@ const BookList = () => {
 					className="rounded-md"
 				/>
 			</label>
-			<button>Add Title</button>
+			<button>Add Book</button>
 		</form>
 	);
 };
