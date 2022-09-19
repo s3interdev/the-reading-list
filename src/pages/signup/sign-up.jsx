@@ -8,7 +8,11 @@ const Signup = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
 		signup(email, password);
+
+		setEmail('');
+		setPassword('');
 	};
 
 	return (

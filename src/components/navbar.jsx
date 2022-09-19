@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useSignout } from '../hooks/useSignout';
 
 const Navbar = () => {
+	const { signout } = useSignout();
+
 	return (
 		<nav>
 			<h1>The Reading List</h1>
@@ -14,7 +17,7 @@ const Navbar = () => {
 				<li>
 					<Link to="/signup">Sign Up</Link>
 				</li>
-				<li>Sign Out</li>
+				<li onClick={signout}>Sign Out</li>
 			</ul>
 		</nav>
 	);
