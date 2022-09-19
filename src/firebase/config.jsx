@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import {
 	getFirestore,
 	collection,
@@ -28,4 +28,13 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 /** export services */
-export { auth, db, collection, onSnapshot, addDoc, doc, deleteDoc };
+export {
+	auth,
+	createUserWithEmailAndPassword,
+	db,
+	collection,
+	onSnapshot,
+	addDoc,
+	doc,
+	deleteDoc,
+};

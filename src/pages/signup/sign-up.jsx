@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import { useSignup } from '../../hooks/useSignup';
 
 const Signup = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const { signup, error } = useSignup();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(email, password);
+		signup(email, password);
 	};
 
 	return (
@@ -36,6 +38,7 @@ const Signup = () => {
 				</label>
 
 				<button>Sign Up</button>
+				{error && <p className="mt-5 text-red-500">{error}</p>}
 			</form>
 		</div>
 	);
