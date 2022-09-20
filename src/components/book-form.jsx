@@ -1,11 +1,17 @@
 import { useState } from 'react';
+import { useAuthContext } from '../hooks/useAuthContext';
+import { db, collection, addDoc } from '../firebase/config';
 
 const BookList = () => {
+	const { user } = useAuthContext();
 	const [newBook, setNewBook] = useState('');
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log(newBook);
+
+		const ref = collection(db, 'books');
+
+		await addDoc(ref, { title: newBook, uid: user.uid });
 
 		setNewBook('');
 	};
@@ -13,7 +19,7 @@ const BookList = () => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<label>
-				<span>Add a New Book Title:</span>
+				<span className="font-semibold uppercase">Add New Book Title</span>
 				<input
 					type="text"
 					onChange={(e) => setNewBook(e.target.value)}
@@ -22,7 +28,7 @@ const BookList = () => {
 					className="rounded-md"
 				/>
 			</label>
-			<button>Add Title</button>
+			<button>Add Book</button>
 		</form>
 	);
 };

@@ -12,7 +12,7 @@
 
 @layer components {
 	.app {
-		@apply my-0 mx-auto max-w-[640px] text-lg;
+		@apply my-0 mx-auto max-w-[640px];
 	}
 
 	.home,
@@ -62,7 +62,7 @@
 	}
 
 	button {
-		@apply rounded-md border-0 bg-blueMagenta py-[6px] px-2 text-white;
+		@apply rounded-md border-0 bg-blueMagenta py-[6px] px-2 uppercase text-white;
 	}
 	/** list section end */
 }

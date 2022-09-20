@@ -1,12 +1,18 @@
 import { useState } from 'react';
+import { useSignin } from '../../hooks/useSignin';
 
 const Signin = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const { signin, error } = useSignin();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(email, password);
+
+		signin(email, password);
+
+		setEmail('');
+		setPassword('');
 	};
 
 	return (
@@ -36,6 +42,8 @@ const Signin = () => {
 				</label>
 
 				<button>Sign In</button>
+
+				{error && <p className="mt-5 text-red-500">{error}</p>}
 			</form>
 		</div>
 	);

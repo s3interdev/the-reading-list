@@ -1,6 +1,10 @@
+import { db, doc, deleteDoc } from '../firebase/config';
+
 const BookList = ({ books }) => {
 	const handleClick = async (id) => {
-		console.log(id);
+		const ref = doc(db, 'books', id);
+
+		await deleteDoc(ref);
 	};
 
 	return (
