@@ -13,6 +13,8 @@ import {
 	addDoc,
 	doc,
 	deleteDoc,
+	query,
+	where,
 } from 'firebase/firestore';
 
 /** firebase configuration object containing keys and identifiers */
@@ -46,4 +48,6 @@ export {
 	addDoc,
 	doc,
 	deleteDoc,
+	query,
+	where,
 };
