@@ -42,6 +42,7 @@ const Signup = () => {
 				</label>
 
 				<button>Sign Up</button>
+
 				{error && <p className="mt-5 text-red-500">{error}</p>}
 			</form>
 		</div>
